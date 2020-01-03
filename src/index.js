@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       firstname: "",
       lastname: "",
-      age: null,
+      age: 21,
       gender: "",
       location: "",
       vegetarian: false,
@@ -27,6 +27,10 @@ class App extends Component {
     type === "checkbox"
       ? this.setState({
           [name]: checked
+        })
+      : type === "number"
+      ? this.setState({
+          [name]: parseInt(value, 10)
         })
       : this.setState({
           [name]: value
